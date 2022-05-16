@@ -1,6 +1,5 @@
 PImage img1;
-int sw = 1;
-int mosaicN = 0;
+int sw = 1, mosaicN = 0;
 
 void setup(){
   size(480, 420);
@@ -20,13 +19,7 @@ void draw(){
   else if(sw == 0){
 	background(255,255,255);
   }else if((sw!=1)&&(sw!=0) ){
-	  for(int y = 0; y<img1.height; y+=mosaicN ){
-		for(int x = 0; x<img1.width; x+=mosaicN){
-			color c = img1.pixels[y*(img1.width)+x];
-			fill(c);
-			rect(x,y,mosaicN,mosaicN);
-		}
-	}
+	  mosaicProcessing(mosaicN);
   }
   
 
